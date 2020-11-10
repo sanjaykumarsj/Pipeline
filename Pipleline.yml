@@ -1,0 +1,19 @@
+trigger: none
+  
+pr: none
+
+stages:
+- stage: BuildWithoutTemplate
+  displayName: 'Build without Template'
+
+  jobs:
+  - job: Self-hosted linux agent
+    displayName: 'Self-hosted linux agent'
+    pool:
+      name: 'Self-hosted linux agent'
+    workspace:
+      clean: all
+
+    variables:
+    - name: Greeting
+      value: 'Hello World'
